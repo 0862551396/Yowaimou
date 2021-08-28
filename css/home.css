@@ -1,0 +1,290 @@
+/* Phần navbar với opening ^^ */
+.begining-title {
+    display: block;
+    margin: 0;
+    height: 50vw;
+    background-image: url(../img/pexels-sebastian-voortman-189349.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    box-shadow: 0px 2px 20px #5c3a2b;
+}
+
+.begining-title > h1 {
+    display: block;
+    font-weight: 600;
+    font-size: 5.5vw;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 15vw;
+    left: 20vw;
+    font-family: 'Rampart One', cursive;
+    color: rgb(0, 0, 0);
+    text-shadow: 5px 4px 25px rgb(41, 82, 170);
+    transform: rotate(5deg);
+}
+.begining-title > h1:hover {
+    cursor: default;
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 30px 60px;
+    z-index: 999999;
+}
+#nav.sticky {
+    padding: 5px 50px;
+    background-color: #d3764b;
+    box-shadow: 0 0 15px rgb(63, 63, 63);    
+}
+.navbar.sticky > .logo > span {
+    color: #1f1d1d !important;
+}
+#nav > .logo {
+    position: relative;
+    font-weight: 700;
+    color: rgb(31, 29, 29);
+    text-decoration: none;
+    font-size: 2vw;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+#nav > .logo > span {
+    color: #e46820;
+    transition: all 0.3s ease;
+}
+
+#nav ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nav ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+#nav ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 21px;
+    transition: 0.6s;
+}
+
+/* undelined the "home" "About Me" */
+.nav-contact {
+    padding: 8px;
+    background-color: #d3764b;
+    border-radius: 30px;
+}
+.nav-1::after,
+.nav-2::after,
+.nav-4::after,
+.nav-5::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #be5416;
+    display: block;
+    margin: auto;
+    transition: 200ms;
+}
+.nav-1:hover::after, 
+.nav-2:hover::after,
+.nav-3:hover::after,
+.nav-4:hover::after,
+.nav-5:hover::after {
+    width: 80%;
+}
+.nav-1_changeColor::after,
+.nav-2_changeColor::after,
+.nav-4_changeColor::after,
+.nav-5_changeColor::after {
+    background-color: #000;
+}
+.nav-3::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+    transition: 200ms;
+}
+
+/* =====End ========*/
+.no-contact { /* change bg color when add */
+    background-color: #d3764b;
+}
+
+
+
+.nav-menu__btn {
+    color: #222;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+/* ========================= Responsive =============================*/
+@media (max-width: 640px) { 
+    /* Home */
+    .begining-title {
+        box-shadow: none;
+        height: 220vw;
+    }
+
+    .begining-title > h1 {
+        font-size: 12.5vw;
+        top: 60vw;
+        left: 7vw;
+    }
+
+    #nav > .logo {
+        font-size: 35px;
+    }
+
+    #nav {
+        padding: 30px 23px;
+    }
+
+    #nav.sticky {
+        padding: 5px 20px;
+    }
+    
+    .nav-1:hover::after, 
+    .nav-2:hover::after,
+    .nav-3:hover::after,
+    .nav-4:hover::after,
+    .nav-5:hover::after,
+    .nav-contact:hover:after {
+        width: 30% !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 699px) {
+    /* Navbar - home - beginning title*/
+    #nav {
+        padding: 20px 40px;
+    }
+
+    #nav.sticky {
+        padding: 15px 50px;
+    }
+    
+    #nav > .logo {
+        font-size: 4vw;
+    }
+
+    
+    /* Team */
+    .carousel-card {
+        min-height: 342px;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-menu__btn-menu.none {
+        display: none !important;
+    }
+    .nav-menu__btn-times {
+        display: none !important;
+    }
+    .nav-menu__btn-times.active {
+        display: block !important;
+    }
+
+    .nav-menu__btn {
+        display: block;
+        z-index: 999;
+    }
+    .nav-menu__btn.whiteColor {
+        color: rgb(230, 230, 230) !important;
+    }
+
+
+    .nav-menu {
+        display: inline-block !important;
+        margin-top: 0;
+        padding: 0 0 ;
+        /* flex-direction: column; */
+        position: fixed !important;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+
+    .nav-menu li {
+        display: block;
+    }
+    .nav-menu li a {
+        display: inline-block;
+        margin: 20px 0 !important;
+        font-size: 25px !important;
+        color: #fff !important;
+    }
+    .nav-menu .nav-contact {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    .nav-1:hover::after, 
+    .nav-2:hover::after,
+    .nav-3:hover::after,
+    .nav-4:hover::after,
+    .nav-5:hover::after,
+    .nav-contact:hover:after {
+        width: 15%;
+    }
+
+    .nav-contact {
+        margin-top: 0.5rem;
+        background-color: #111;
+    }
+    .nav-contact::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: #be5416;
+        display: block;
+        margin: auto;
+        transition: 200ms;
+    }
+
+}
+
+@media (min-width: 700px) and (max-width: 1400px) {
+    #nav.sticky {
+        padding: 10px 50px;
+    }
+    #nav > .logo {
+        font-size: 4vw;
+    }
+
+    .nav-menu__btn-times {
+        font-size: 30px ;
+    }
+}

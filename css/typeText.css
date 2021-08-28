@@ -1,0 +1,105 @@
+#father {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-content: center;
+    background: lightcoral;
+}
+#father:hover {
+    cursor: pointer;
+}
+/* @keyframes click {
+    to {
+        cursor: pointer ;
+    }
+} */
+
+.overlay{
+    width: fit-content;
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center;
+}
+
+.introduction{
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);  
+    font-family: 'IBM Plex Mono', monospace;
+    position: relative;
+    width: max-content;
+    color: rgb(27, 27, 36);
+    text-align: center;
+    margin: auto;
+}
+.introduction::before,
+.introduction::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.introduction::before {
+    background: lightcoral;
+    animation: typeWriter 3s
+      steps(27) forwards;
+}
+.introduction::after {
+    width: 0.125em;
+    background: black;
+    animation: 
+    typeWriter 3s steps(27) forwards,
+    blink 750ms steps(27) infinite;
+}
+
+@keyframes typeWriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
+
+.subtitle {
+    font-family: 'Josefin Slab', serif;
+    font-size : clamp(1rem, 3vw + 0.5rem, 3rem);
+    font-weight: 600;
+    color: rgb(226, 221, 221);
+    opacity: 0;
+    transform: translateY(10rem);
+    animation: fadeInUp 2s ease 3s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.instruction {
+    font-size: 1.5rem;
+    color: rgb(214, 57, 78);
+    opacity: 0;
+    animation: 
+    appear 0.5s linear 4s forwards,
+    changeColorText 1s linear infinite;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes changeColorText {
+    to {
+       color: rgb(201, 26, 143);
+    }
+}
